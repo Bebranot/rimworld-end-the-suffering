@@ -1,0 +1,10 @@
+bin/
+obj/
+.vs/
+.idea/
+*.user
+*.pdb
+_devdocs/
+CLAUDE.local.md
+.claude/
+Thumbs.db
