@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework Condition="'$(RimVersion)' == '1.6'">net472</TargetFramework>
+    <TargetFramework Condition="'$(RimVersion)' == '1.7'">net10.0</TargetFramework>
+    <AssemblyName>EndTheSuffering</AssemblyName>
+    <RootNamespace>EndTheSuffering</RootNamespace>
+    <LangVersion>12.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <OutputPath>..\$(RimVersion)\Assemblies\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <DebugType>none</DebugType>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <DefineConstants Condition="'$(DevTest)' == 'true'">$(DefineConstants);DEVTEST</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="obj\**" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(RimVersion)' == '1.6'">
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4871" ExcludeAssets="runtime" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(RimVersion)' == '1.7'">
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.7.4998-unstable" ExcludeAssets="runtime" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Lib.Harmony" Version="2.3.6" ExcludeAssets="runtime" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net472" Version="1.0.3" PrivateAssets="all" Condition="'$(RimVersion)' == '1.6'" />
+  </ItemGroup>
+</Project>

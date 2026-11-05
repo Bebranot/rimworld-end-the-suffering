@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <EndSuffering_MenuLabel>Завершить мучения</EndSuffering_MenuLabel>
+  <EndSuffering_Disabled>Завершить мучения ({0})</EndSuffering_Disabled>
+  <EndSuffering_ConfirmText>{PAWN_labelShort} давно в отчаянии. Вы уверены? Отменить это будет нельзя.</EndSuffering_ConfirmText>
+  <EndSuffering_Cancelled>{PAWN_labelShort} {PAWN_gender ? опустил : опустила} оружие.</EndSuffering_Cancelled>
+  <EndSuffering_LetterLabel>Смерть: {PAWN_labelShort}</EndSuffering_LetterLabel>
+  <EndSuffering_LetterText>{PAWN_labelShort} больше не {PAWN_gender ? мог : могла} это выносить и {PAWN_gender ? покончил : покончила} с собой.</EndSuffering_LetterText>
+  <EndSuffering_NoFirearm>нет огнестрельного оружия</EndSuffering_NoFirearm>
+  <EndSuffering_NotFirearm>оружие не подходит</EndSuffering_NotFirearm>
+  <EndSuffering_NoAmmo>оружие не заряжено</EndSuffering_NoAmmo>
+  <EndSuffering_NoHands>не может действовать руками</EndSuffering_NoHands>
+  <EndSuffering_MentalState>нервный срыв</EndSuffering_MentalState>
+  <EndSuffering_NoHead>нет головы</EndSuffering_NoHead>
+  <EndSuffering_CannotDie>не может умереть</EndSuffering_CannotDie>
+  <EndSuffering_SettingMood>Порог настроения: {0}%</EndSuffering_SettingMood>
+  <EndSuffering_SettingHours>Требуемая длительность: {0} ч</EndSuffering_SettingHours>
+  <EndSuffering_SettingMedium>Средний калибр от урона: {0}</EndSuffering_SettingMedium>
+  <EndSuffering_SettingLarge>Крупный калибр от урона: {0}</EndSuffering_SettingLarge>
+  <EndSuffering_SettingThought>Штраф к настроению у других колонистов</EndSuffering_SettingThought>
+</LanguageData>

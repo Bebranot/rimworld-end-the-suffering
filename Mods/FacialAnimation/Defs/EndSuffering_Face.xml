@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Loaded only when [NL] Facial Animation is active. See LoadFolders.xml. -->
+  <FacialAnimation.FaceAnimationDef>
+    <defName>EndSuffering_Face</defName>
+    <animationFrames>
+      <li>
+        <duration>150</duration>
+        <browShapeDef>s-shaped</browShapeDef>
+        <mouthShapeDef>normal</mouthShapeDef>
+      </li>
+      <li>
+        <duration>90</duration>
+        <browShapeDef>s-shaped</browShapeDef>
+        <mouthShapeDef>open</mouthShapeDef>
+        <browOffset>(0,0,-0.00875)</browOffset>
+      </li>
+      <li>
+        <duration>120</duration>
+        <browShapeDef>angled</browShapeDef>
+        <lidShapeDef>close</lidShapeDef>
+        <mouthShapeDef>normal</mouthShapeDef>
+      </li>
+    </animationFrames>
+    <targetJobs>
+      <li>EndSuffering_Job</li>
+    </targetJobs>
+    <priority>10300</priority>
+  </FacialAnimation.FaceAnimationDef>
+</Defs>

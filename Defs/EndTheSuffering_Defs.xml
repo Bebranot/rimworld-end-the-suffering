@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <JobDef>
+    <defName>EndSuffering_Job</defName>
+    <driverClass>EndTheSuffering.JobDriver_EndSuffering</driverClass>
+    <reportString>raising a gun with shaking hands.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>true</playerInterruptible>
+    <suspendable>false</suspendable>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+    <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+    <checkOverrideOnDamage>Never</checkOverrideOnDamage>
+  </JobDef>
+
+  <ThoughtDef>
+    <defName>EndSuffering_ColonistEndedSuffering</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>2</stackLimit>
+    <stages>
+      <li>
+        <label>a colonist took their own life</label>
+        <description>We should have seen how much they were hurting.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThingDef ParentName="FilthBlood">
+    <defName>EndSuffering_Filth_BrainMatter</defName>
+    <label>brain matter</label>
+    <graphicData>
+      <texPath>Things/Filth/Spatter</texPath>
+      <color>(196, 138, 138, 225)</color>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="FilthBlood">
+    <defName>EndSuffering_Filth_BoneFragments</defName>
+    <label>bone fragments</label>
+    <graphicData>
+      <texPath>Things/Filth/Grainy</texPath>
+      <color>(222, 212, 190, 225)</color>
+    </graphicData>
+  </ThingDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>EndSuffering_BloodMist</defName>
+    <graphicData>
+      <texPath>Things/Mote/DustPuff</texPath>
+      <color>(120, 16, 16, 220)</color>
+      <renderInstanced>true</renderInstanced>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.02</fadeInTime>
+    <solidTime>0.05</solidTime>
+    <fadeOutTime>0.6</fadeOutTime>
+  </FleckDef>
+
+</Defs>

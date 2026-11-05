@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <EndSuffering_MenuLabel>End the suffering</EndSuffering_MenuLabel>
+  <EndSuffering_Disabled>End the suffering ({0})</EndSuffering_Disabled>
+  <EndSuffering_ConfirmText>{PAWN_labelShort} has been in despair for a long time. Are you sure? This cannot be undone.</EndSuffering_ConfirmText>
+  <EndSuffering_Cancelled>{PAWN_labelShort} lowered the gun.</EndSuffering_Cancelled>
+  <EndSuffering_LetterLabel>Death: {PAWN_labelShort}</EndSuffering_LetterLabel>
+  <EndSuffering_LetterText>{PAWN_labelShort} could not bear it any longer and took {PAWN_possessive} own life.</EndSuffering_LetterText>
+  <EndSuffering_NoFirearm>no firearm equipped</EndSuffering_NoFirearm>
+  <EndSuffering_NotFirearm>weapon not suitable</EndSuffering_NotFirearm>
+  <EndSuffering_NoAmmo>weapon not loaded</EndSuffering_NoAmmo>
+  <EndSuffering_NoHands>cannot use hands</EndSuffering_NoHands>
+  <EndSuffering_MentalState>mental state</EndSuffering_MentalState>
+  <EndSuffering_NoHead>no head</EndSuffering_NoHead>
+  <EndSuffering_CannotDie>cannot die</EndSuffering_CannotDie>
+  <EndSuffering_SettingMood>Mood threshold: {0}%</EndSuffering_SettingMood>
+  <EndSuffering_SettingHours>Required duration: {0} h</EndSuffering_SettingHours>
+  <EndSuffering_SettingMedium>Medium caliber from damage: {0}</EndSuffering_SettingMedium>
+  <EndSuffering_SettingLarge>Heavy caliber from damage: {0}</EndSuffering_SettingLarge>
+  <EndSuffering_SettingThought>Other colonists get a mood penalty</EndSuffering_SettingThought>
+</LanguageData>

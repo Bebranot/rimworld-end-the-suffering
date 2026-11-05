@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>End the Suffering</name>
+  <author>Bebranot</author>
+  <packageId>bebranot.endthesuffering</packageId>
+  <url>https://github.com/Bebranot/rimworld-end-the-suffering</url>
+  <supportedVersions>
+    <li>1.6</li>
+    <li>1.7</li>
+  </supportedVersions>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+    <li>CETeam.CombatExtended</li>
+    <li>Mlie.ShowMeYourHands</li>
+    <li>Nals.FacialAnimation</li>
+  </loadAfter>
+  <description>CONTENT WARNING: this mod depicts a colonist's suicide with a firearm, including gore. It is intended for grim, realistic playthroughs. If you are struggling yourself, please talk to someone you trust or contact a local crisis line; findahelpline.com lists services by country.
+
+Adds a player-only action. The game never triggers it on its own.
+
+When an adult colonist's mood has stayed below 5% for 24 in-game hours, select them and right-click them to get "End the suffering". After you confirm, the pawn stops, slowly raises the gun with shaking hands, and fires. The result depends on the weapon: small calibers destroy the brain, medium calibers the skull, and heavy calibers and shotguns the whole head. Giving any other order cancels it until the last moment.
+
+Requirements for the action:
+- Firearm equipped and, with Combat Extended, loaded. Bows, grenades, launchers and melee weapons do not qualify.
+- Adult colonist (18+), not downed, not in a mental state, able to use their hands, with a head.
+
+Compatibility (all optional, no hard dependency):
+- Combat Extended: loaded rounds are checked and consumed, and the loaded ammo sets the caliber.
+- Show Me Your Hands: hands follow the weapon.
+- [NL] Facial Animation: the face changes during the animation.
+
+Performance: no per-pawn ticking and no comps on pawns. Tracking runs inside the existing mood update, only for player pawns. Safe to add to an existing save.
+
+Settings let you change the mood threshold, duration and caliber thresholds.
+
+Source: https://github.com/Bebranot/rimworld-end-the-suffering</description>
+</ModMetaData>
