@@ -128,6 +128,27 @@ namespace EndTheSuffering
             Log.Message(Tag + "face t=" + elapsed + " job=" + job + " anims=" + names);
         }
 
+        // Prints every player-facing string in the active language, for both genders.
+        private static void LogTranslations(Pawn pawn)
+        {
+            Gender original = pawn.gender;
+            foreach (Gender gender in new[] { Gender.Male, Gender.Female })
+            {
+                pawn.gender = gender;
+                foreach (string key in new[] { "EndSuffering_ConfirmText", "EndSuffering_Cancelled", "EndSuffering_LetterLabel", "EndSuffering_LetterText" })
+                {
+                    Log.Message(Tag + "LANG " + gender + " " + key + " = " + key.Translate(pawn.Named("PAWN")).Resolve());
+                }
+            }
+            pawn.gender = original;
+            Log.Message(Tag + "LANG menu = " + "EndSuffering_MenuLabel".Translate() + " | " + "EndSuffering_Disabled".Translate("EndSuffering_NoAmmo".Translate()));
+            Log.Message(Tag + "LANG job = " + EndSufferingDefOf.EndSuffering_Job.reportString);
+            ThoughtStage stage = DefDatabase<ThoughtDef>.GetNamed("EndSuffering_ColonistEndedSuffering").stages[0];
+            Log.Message(Tag + "LANG thought = " + stage.label + " | " + stage.description);
+            Log.Message(Tag + "LANG filth = " + ThingDef.Named("EndSuffering_Filth_BrainMatter").label + " | " + ThingDef.Named("EndSuffering_Filth_BoneFragments").label);
+            Log.Message(Tag + "LANG DONE");
+        }
+
         private static void Start(Pawn pawn)
         {
             Job job = JobMaker.MakeJob(EndSufferingDefOf.EndSuffering_Job, pawn.equipment.Primary);
@@ -195,6 +216,7 @@ namespace EndTheSuffering
                             }
                             Find.CameraDriver.SetRootPosAndSize(menuPawn.DrawPos, Record ? 3.6f : 2.5f);
                             Find.TickManager.Pause();
+                            LogTranslations(menuPawn);
                             Log.Message(Tag + "MENU READY");
                             break;
                         }
