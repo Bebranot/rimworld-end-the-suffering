@@ -1,5 +1,7 @@
 # End the Suffering
 
+![End the Suffering](About/Preview.png)
+
 A RimWorld mod for realistic, grim playthroughs. A colonist who has been in despair for a long time can, on the player's explicit order, end their life with the firearm they carry.
 
 > **Content warning:** this mod depicts suicide. If you are struggling yourself, please talk to someone. You can find a helpline in your country at [findahelpline.com](https://findahelpline.com).
@@ -29,7 +31,9 @@ Performance: the mood check runs at the game's normal mood interval, for player 
 
 ### Test status
 
-Tested on RimWorld 1.7.4998, alone and together with Combat Extended, Show Me Your Hands and Facial Animation. The 1.6 build compiles against the 1.6 API but has not been run in the game. Larger mod lists have not been tested; please report conflicts with your `Player.log`.
+Tested on RimWorld 1.7.4998, alone and together with Combat Extended, Show Me Your Hands and Facial Animation. The 1.6 build compiles against the 1.6 API but has not been run in the game. Adding the mod to an existing save and larger mod lists have not been tested; please report conflicts with your `Player.log`.
+
+Contact: Discord `bebranotyep`, or open an issue here.
 
 ## Building
 

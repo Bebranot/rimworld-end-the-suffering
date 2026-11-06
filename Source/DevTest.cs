@@ -28,6 +28,9 @@ namespace EndTheSuffering
 
         private static bool Visual => System.IO.File.Exists(System.IO.Path.Combine(GenFilePaths.SaveDataFolderPath, "ets_visual.flag"));
 
+        // Recording a clip: no pauses or camera jumps once the animation starts.
+        private static bool Record => System.IO.File.Exists(System.IO.Path.Combine(GenFilePaths.SaveDataFolderPath, "ets_record.flag"));
+
         public DevTestComponent(Game game) { }
 
         public override void ExposeData()
@@ -155,7 +158,42 @@ namespace EndTheSuffering
                             Find.Selector.ClearSelection();
                             Find.Selector.Select(menuPawn);
                             Find.CameraDriver.config.sizeRange = new FloatRange(2f, 60f);
-                            Find.CameraDriver.SetRootPosAndSize(menuPawn.DrawPos, 2.5f);
+                            if (Record)
+                            {
+                                // Keep the frame clear: draft colonists far away and remove nearby animals.
+                                IntVec3 far = (menuPawn.Position + new IntVec3(45, 0, 45)).ClampInsideMap(Map);
+                                foreach (Pawn other in Map.mapPawns.AllPawnsSpawned.ToList())
+                                {
+                                    if (other == menuPawn)
+                                    {
+                                        continue;
+                                    }
+                                    if (other.IsColonist)
+                                    {
+                                        other.DeSpawn();
+                                        GenSpawn.Spawn(other, CellFinder.RandomClosewalkCellNear(far, Map, 8), Map);
+                                        other.drafter.Drafted = true;
+                                    }
+                                    else if (other.Position.InHorDistOf(menuPawn.Position, 30f))
+                                    {
+                                        other.Destroy();
+                                    }
+                                }
+                                foreach (IntVec3 cell in GenRadial.RadialCellsAround(menuPawn.Position, 6f, true))
+                                {
+                                    if (cell.InBounds(Map))
+                                    {
+                                        foreach (Thing thing in cell.GetThingList(Map).ToList())
+                                        {
+                                            if (thing.def.category == ThingCategory.Item)
+                                            {
+                                                thing.Destroy();
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            Find.CameraDriver.SetRootPosAndSize(menuPawn.DrawPos, Record ? 3.6f : 2.5f);
                             Find.TickManager.Pause();
                             Log.Message(Tag + "MENU READY");
                             break;
@@ -166,13 +204,21 @@ namespace EndTheSuffering
                                 && d.aimStartTick > 0)
                             {
                                 int elapsed = now - d.aimStartTick;
-                                if (elapsed == 100 || elapsed == 200 || elapsed == 285)
+                                if (Record)
+                                {
+                                    Find.Selector.ClearSelection();
+                                }
+                                if (!Record && (elapsed == 100 || elapsed == 200 || elapsed == 285))
                                 {
                                     Find.TickManager.Pause();
                                     LogFaceState(menuPawn, elapsed);
                                 }
                             }
                             MakeEligible(menuPawn);
+                            break;
+                        }
+                        if (menuPawn != null && Record)
+                        {
                             break;
                         }
                         if (menuPawn != null && !menuDeathPaused)

@@ -37,9 +37,13 @@ Compatibility (all optional, no hard dependency):
 - Show Me Your Hands: hands follow the weapon.
 - [NL] Facial Animation: the face changes during the animation.
 
-Performance: no per-pawn ticking and no comps on pawns. Tracking runs inside the existing mood update, only for player pawns. Safe to add to an existing save.
+Performance: no per-pawn ticking and no comps on pawns. Tracking runs inside the existing mood update, only for player pawns.
 
 Settings let you change the mood threshold, duration and caliber thresholds.
 
+Test status: tested on RimWorld 1.7.4998, alone and with Combat Extended, Show Me Your Hands and Facial Animation. The 1.6 build compiles but has not been run in the game. Adding the mod to an existing save and large mod lists have not been tested yet, so back up your save first.
+
+Bug reports with your Player.log are welcome.
+Discord: bebranotyep
 Source: https://github.com/Bebranot/rimworld-end-the-suffering</description>
 </ModMetaData>
